@@ -22,6 +22,7 @@
 #   --http-bind-address, so a static port declaration would be a lie.
 # - No CMD: entrypoint.sh execs the server itself; nothing depends on the
 #   image CMD.
+# (Config-file check: railway.json at the repo root is the deploy config.)
 FROM matrixdotorg/dendrite-monolith:v0.15.2@sha256:e9a93fe88ab6c3716af5a495e021201e9aee30a8509dadb4a7ebd7d859880144
 USER root
 # Default admin username. The password comes from the template variable
