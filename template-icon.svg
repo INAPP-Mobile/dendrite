@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Original mark for the Dendrite Railway template (not the upstream logo):
+       a dark rounded tile with three connected nodes forming a chat bubble. -->
+  <rect width="128" height="128" rx="26" fill="#0d1f1a"/>
+  <path d="M28 34h72v52H56l-20 18V86H28z" fill="none" stroke="#3ddc84" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="46" cy="60" r="6" fill="#3ddc84"/>
+  <circle cx="64" cy="60" r="6" fill="#3ddc84"/>
+  <circle cx="82" cy="60" r="6" fill="#3ddc84"/>
+</svg>

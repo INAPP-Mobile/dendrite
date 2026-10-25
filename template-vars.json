@@ -1,0 +1,1 @@
+{"DENDRITE_ADMIN_PASSWORD":{"defaultValue":"${{secret(32)}}","description":"Password for the admin account (@admin:<your domain>). A fresh value is generated for each install and shown in the deploy form — save it before clicking Deploy. Minimum 8 characters.","isOptional":false}}
