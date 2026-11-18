@@ -19,7 +19,7 @@ first boot.
 Click **Deploy on Railway** above. The deploy form shows one pre-filled
 field: the generated admin password — **save it before clicking Deploy**.
 On first boot the wrapper generates the server's Matrix signing key, builds
-the config, and creates the admin account `@admin:<your domain>`. Wait
+the config, and creates the admin account `@admin:{your domain}`. Wait
 about a minute after the deployment turns green, then log in.
 
 No companion services: Dendrite is a single Go process with embedded
@@ -62,7 +62,7 @@ running image's defaults).
 
 | Variable | Default | What it does |
 | --- | --- | --- |
-| `DENDRITE_ADMIN_PASSWORD` | `${{secret(32)}}` (generated per install) | Password for the admin account `@admin:<your domain>`. Shown in the deploy form — save it. Minimum 8 characters (Dendrite enforces this). If left empty, the entrypoint generates one and prints it once in the deploy logs. |
+| `DENDRITE_ADMIN_PASSWORD` | `${{secret(32)}}` (generated per install) | Password for the admin account `@admin:{your domain}`. Shown in the deploy form — save it. Minimum 8 characters (Dendrite enforces this). If left empty, the entrypoint generates one and prints it once in the deploy logs. |
 | `DENDRITE_ADMIN_USER` | `admin` (baked into the image) | Localpart of the admin account. Changing it after first boot does nothing — the account is created once. |
 | `PORT` | injected by Railway | Port Dendrite binds via `--http-bind-address`. Never set this yourself; Railway sets it. |
 | `RAILWAY_PUBLIC_DOMAIN` | injected by Railway | Becomes the Matrix `server_name` at first boot and is pinned forever. Matrix user IDs are `@user:server_name`, so the domain must not change after first boot or every account is orphaned. |
@@ -79,9 +79,9 @@ federation enabled.
 
 1. Deploy, save the admin password from the form, wait for green.
 2. Open [Element Web](https://app.element.io), click "Edit" next to the
-   homeserver, enter your Railway URL (`https://<your domain>`), and sign
+   homeserver, enter your Railway URL (`https://{your domain}`), and sign
    in as `admin` with the saved password. (Your user ID will be
-   `@admin:<your domain>`.)
+   `@admin:{your domain}`.)
 3. Create a room, send a message, invite people from other Matrix
    servers by their full `@user:server` IDs.
 
@@ -93,7 +93,7 @@ works if you delegate to it:
 
 1. Own a domain, e.g. `matrix.example.com`.
 2. Serve `https://matrix.example.com/.well-known/matrix/server` with
-   `{"m.server": "<your-railway-domain>:443"}` from that domain (any
+   `{"m.server": "{your-railway-domain}:443"}` from that domain (any
    static host works; Railway cannot serve this file for you).
 3. Remote servers will then reach this deployment on port 443, and your
    `server_name` stays your Railway domain — user IDs do not change.
